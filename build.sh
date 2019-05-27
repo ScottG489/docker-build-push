@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+echo lol
 
 ID_RSA_CONTENTS=$(echo -n $1 | jq -r .ID_RSA | base64 --decode)
 DOCKER_CONFIG_CONTENTS=$(echo -n $1 | jq -r .DOCKER_CONFIG | base64 --decode)
@@ -13,6 +14,7 @@ printf -- "$DOCKER_CONFIG_CONTENTS" > /root/.docker/config.json
 
 chmod 400 /root/.ssh/id_rsa
 
+echo about to clone
 git clone $GIT_REPO_URL repo
 cd repo/$RELATIVE_SUB_DIR
 
