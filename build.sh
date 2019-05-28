@@ -2,6 +2,8 @@
 set -e
 echo lol
 
+echo $1
+
 ID_RSA_CONTENTS=$(echo -n $1 | jq -r .ID_RSA | base64 --decode)
 DOCKER_CONFIG_CONTENTS=$(echo -n $1 | jq -r .DOCKER_CONFIG | base64 --decode)
 
