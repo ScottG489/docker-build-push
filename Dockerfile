@@ -9,7 +9,7 @@ COPY known_hosts /root/.ssh/known_hosts
 RUN mkdir /root/.docker
 
 RUN mkdir -p /opt/build
-COPY build.sh /opt/build/build.sh
+COPY run.sh /opt/build/run.sh
 
 WORKDIR /opt/build
-ENTRYPOINT ["./build.sh"]
+ENTRYPOINT ["./run.sh"]
