@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-echo lol
 
 echo $1
 
