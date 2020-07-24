@@ -1,4 +1,6 @@
 # docker-build-push
+![CI](https://github.com/ScottG489/docker-build-push/workflows/CI/badge.svg)
+
 A docker image capable of building and pushing an image in a repo
 
 ## Inputs
