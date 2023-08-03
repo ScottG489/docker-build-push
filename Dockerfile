@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   git \
-  openssh-client=1:8.2p1-4ubuntu0.7 \
+  openssh-client=1:8.2p1-4ubuntu0.8 \
   jq \
   ca-certificates \
   curl \
