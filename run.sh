@@ -5,6 +5,7 @@ ID_RSA_CONTENTS=$(echo -n $1 | jq -r .ID_RSA | base64 --decode)
 DOCKER_CONFIG_CONTENTS=$(echo -n $1 | jq -r .DOCKER_CONFIG | base64 --decode)
 
 GIT_REPO_URL=$(echo -n $1 | jq -r .GIT_REPO_URL)
+declare -r _GIT_BRANCH=$(jq -r '.GIT_BRANCH // "master"' <<< "$1")
 RELATIVE_SUB_DIR=$(echo -n $1 | jq -r .RELATIVE_SUB_DIR)
 DOCKER_IMAGE_NAME=$(echo -n $1 | jq -r .DOCKER_IMAGE_NAME)
 
@@ -19,7 +20,7 @@ set -x
 dockerd > /var/log/dockerd.log 2>&1 &
 sleep 3
 
-git clone $GIT_REPO_URL repo
+git clone --branch $_GIT_BRANCH $GIT_REPO_URL repo
 cd repo/$RELATIVE_SUB_DIR
 
 docker build -t $DOCKER_IMAGE_NAME .
