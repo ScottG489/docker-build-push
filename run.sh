@@ -6,7 +6,7 @@ DOCKER_CONFIG_CONTENTS=$(echo -n $1 | jq -r .DOCKER_CONFIG | base64 --decode)
 
 GIT_REPO_URL=$(echo -n $1 | jq -r .GIT_REPO_URL)
 declare -r _GIT_BRANCH=$(jq -r '.GIT_BRANCH // "master"' <<< "$1")
-declare -r _RUN_TASK=$(jq -r .RUN_TASK <<< "$1")
+declare -r _RUN_TASK=$(jq -r '.RUN_TASK // "deploy"' <<< "$1")
 RELATIVE_SUB_DIR=$(echo -n $1 | jq -r .RELATIVE_SUB_DIR)
 DOCKER_IMAGE_NAME=$(echo -n $1 | jq -r .DOCKER_IMAGE_NAME)
 
