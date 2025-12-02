@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build and deploy
-      run: ./build.sh ${{ secrets.ID_RSA_CONTENTS_BASE64 }} ${{ secrets.DOCKER_CONFIG_CONTENTS_BASE64 }}
+      run: ./build.sh deploy ${{ secrets.ID_RSA_CONTENTS_BASE64 }} ${{ secrets.DOCKER_CONFIG_CONTENTS_BASE64 }}
       env:
         GIT_REPO_URL: 'git@github.com:ScottG489/docker-build-push.git'
         RELATIVE_SUB_DIR: '.'
