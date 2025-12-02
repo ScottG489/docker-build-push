@@ -21,9 +21,7 @@ set -x
 dockerd > /var/log/dockerd.log 2>&1 &
 sleep 3
 
-if [ ! -d "repo" ]; then
-  git clone --branch $_GIT_BRANCH $GIT_REPO_URL repo
-fi
+[ -d "repo" ] || git clone --branch $_GIT_BRANCH $GIT_REPO_URL repo
 cd repo/$RELATIVE_SUB_DIR
 
 docker build -t $DOCKER_IMAGE_NAME .
