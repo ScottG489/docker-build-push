@@ -11,6 +11,7 @@ DOCKER_CONFIG_CONTENTS_BASE64=$(base64 ~/.docker/config.json | tr -d '\n') ;
 
 read -r -d '\' JSON_BODY <<- EOM
   {
+  "RUN_TASK": "test",
   "ID_RSA": "$ID_RSA_CONTENTS_BASE64",
   "DOCKER_CONFIG": "$DOCKER_CONFIG_CONTENTS_BASE64",
   "GIT_REPO_URL": "git@github.com:ScottG489/docker-build-push.git",

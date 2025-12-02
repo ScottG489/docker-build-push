@@ -6,6 +6,7 @@ DOCKER_CONFIG_CONTENTS=$(echo -n $1 | jq -r .DOCKER_CONFIG | base64 --decode)
 
 GIT_REPO_URL=$(echo -n $1 | jq -r .GIT_REPO_URL)
 declare -r _GIT_BRANCH=$(jq -r '.GIT_BRANCH // "master"' <<< "$1")
+declare -r _RUN_TASK=$(jq -r .RUN_TASK <<< "$1")
 RELATIVE_SUB_DIR=$(echo -n $1 | jq -r .RELATIVE_SUB_DIR)
 DOCKER_IMAGE_NAME=$(echo -n $1 | jq -r .DOCKER_IMAGE_NAME)
 
@@ -20,8 +21,11 @@ set -x
 dockerd > /var/log/dockerd.log 2>&1 &
 sleep 3
 
-git clone --branch $_GIT_BRANCH $GIT_REPO_URL repo
+if [ ! -d "repo" ]; then
+  git clone --branch $_GIT_BRANCH $GIT_REPO_URL repo
+fi
 cd repo/$RELATIVE_SUB_DIR
 
 docker build -t $DOCKER_IMAGE_NAME .
+[ "$_RUN_TASK" != "deploy" ] && exit 0
 docker push $DOCKER_IMAGE_NAME
