@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+readonly GIT_BRANCH=${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}
 readonly IMAGE_NAME='scottg489/docker-build-push:latest'
 readonly RUN_TASK=$1
 readonly ID_RSA=$2
@@ -8,6 +9,7 @@ readonly DOCKER_CONFIG=$3
 read -r -d '' JSON_BODY <<- EOM
   {
   "RUN_TASK": "$RUN_TASK",
+  "GIT_BRANCH": "$GIT_BRANCH",
   "ID_RSA": "$ID_RSA",
   "DOCKER_CONFIG": "$DOCKER_CONFIG",
   "GIT_REPO_URL": "$GIT_REPO_URL",
