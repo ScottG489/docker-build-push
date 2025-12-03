@@ -1,5 +1,6 @@
 FROM ubuntu:24.04@sha256:c35e29c9450151419d9448b0fd75374fec4fff364a27f176fb458d472dfc9e54
 
+# renovate: ubuntu-packages
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   git=1:2.43.0-1ubuntu7 \
@@ -12,6 +13,7 @@ RUN apt-get update && \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+# renovate: docker-packages
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && \
   echo \
     "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \

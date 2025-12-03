@@ -13,7 +13,7 @@
       "customType": "regex",
       "managerFilePatterns": ["/(^|/)Dockerfile($|\\.)/"],
       "matchStrings": [
-        "\\s+(?<depName>(?!docker-ce|containerd\\.io)[a-z0-9][a-z0-9+.-]+)=(?<currentValue>[^\\s\\\\]+)"
+        "# renovate: ubuntu-packages\\s+RUN[\\s\\S]*?(?:\\s+(?<depName>[a-z0-9][a-z0-9+.-]+)=(?<currentValue>[^\\s\\\\]+))"
       ],
       "datasourceTemplate": "deb",
       "registryUrlTemplate": "https://archive.ubuntu.com/ubuntu?suite=noble&components=main,universe,restricted,multiverse&binaryArch=amd64"
@@ -22,7 +22,7 @@
       "customType": "regex",
       "managerFilePatterns": ["/(^|/)Dockerfile($|\\.)/"],
       "matchStrings": [
-        "\\s+(?<depName>docker-ce|docker-ce-cli|containerd\\.io)=(?<currentValue>[^\\s\\\\]+)"
+        "# renovate: docker-packages\\s+RUN[\\s\\S]*?(?:\\s+(?<depName>[a-z0-9][a-z0-9+.-]+)=(?<currentValue>[^\\s\\\\]+))"
       ],
       "datasourceTemplate": "deb",
       "registryUrlTemplate": "https://download.docker.com/linux/ubuntu?suite=noble&components=stable&binaryArch=amd64"
