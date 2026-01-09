@@ -6,7 +6,7 @@ on:
       - master
   repository_dispatch:
   schedule:
-    - cron: '15 7 * * *'
+    - cron: '35 9 * * 3'
 
 jobs:
   build:
