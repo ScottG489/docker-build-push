@@ -18,7 +18,7 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /
     | tee /etc/apt/sources.list.d/docker.list > /dev/null && \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  docker-ce=5:29.1.3-1~ubuntu.24.04~noble \
+  docker-ce=5:29.1.4-1~ubuntu.24.04~noble \
   docker-ce-cli=5:29.1.3-1~ubuntu.24.04~noble \
   containerd.io=2.2.1-1~ubuntu.24.04~noble
 
