@@ -6,7 +6,7 @@ RUN apt-get update && \
   openssh-client=1:9.6p1-3ubuntu13.14 \
   jq=1.7.1-3ubuntu0.24.04.1 \
   ca-certificates=20240203 \
-  curl=8.5.0-2ubuntu10.6 \
+  curl=8.5.0-2ubuntu10.7 \
   gnupg=2.4.4-2ubuntu17.4 \
   lsb-release=12.0-2 \
   && apt-get clean \
