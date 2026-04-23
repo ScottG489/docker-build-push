@@ -4,7 +4,7 @@ RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   git=1:2.43.0-1ubuntu7.3 \
   openssh-client=1:9.6p1-3ubuntu13.15 \
-  jq=1.7.1-3ubuntu0.24.04.1 \
+  jq=1.7.1-3ubuntu0.24.04.2 \
   ca-certificates=20240203 \
   curl=8.5.0-2ubuntu10.8 \
   gnupg=2.4.4-2ubuntu17.4 \
