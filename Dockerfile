@@ -1,14 +1,14 @@
-FROM ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+FROM ubuntu:26.04@sha256:5e275723f82c67e387ba9e3c24baa0abdcb268917f276a0561c97bef9450d0b4
 
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-  git=1:2.43.0-1ubuntu7.3 \
-  openssh-client=1:9.6p1-3ubuntu13.15 \
-  jq=1.7.1-3ubuntu0.24.04.2 \
-  ca-certificates=20240203 \
-  curl=8.5.0-2ubuntu10.8 \
-  gnupg=2.4.4-2ubuntu17.4 \
-  lsb-release=12.0-2 \
+  git=1:2.53.0-1ubuntu1 \
+  openssh-client=1:10.2p1-2ubuntu3 \
+  jq=1.8.1-4ubuntu2 \
+  ca-certificates=20260223 \
+  curl=8.18.0-1ubuntu2 \
+  gnupg=2.4.8-4ubuntu3 \
+  lsb-release=12.1-2build1 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -18,9 +18,9 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /
     | tee /etc/apt/sources.list.d/docker.list > /dev/null && \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  docker-ce=5:29.4.0-1~ubuntu.24.04~noble \
-  docker-ce-cli=5:29.4.0-1~ubuntu.24.04~noble \
-  containerd.io=2.2.2-1~ubuntu.24.04~noble
+  docker-ce=5:29.4.1-1~ubuntu.26.04~resolute \
+  docker-ce-cli=5:29.4.1-1~ubuntu.26.04~resolute \
+  containerd.io=2.2.3-1~ubuntu.26.04~resolute
 
 COPY known_hosts /root/.ssh/known_hosts
 
