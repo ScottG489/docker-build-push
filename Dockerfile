@@ -7,7 +7,7 @@ RUN apt-get update && \
   jq=1.7.1-3ubuntu0.24.04.2 \
   ca-certificates=20240203 \
   curl=8.5.0-2ubuntu10.13 \
-  gnupg=2.4.4-2ubuntu17.4 \
+  gnupg=2.4.4-2ubuntu17.6 \
   lsb-release=12.0-2 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
