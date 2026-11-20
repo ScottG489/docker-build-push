@@ -2,7 +2,7 @@ FROM ubuntu:24.04@sha256:33ceb71981b602c1a7443a53469e4dba065f7503eab3078a2d7a57a
 
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-  git=1:2.43.0-1ubuntu7.3 \
+  git=1:2.43.0-1ubuntu7.4 \
   openssh-client=1:9.6p1-3ubuntu13.18 \
   jq=1.7.1-3ubuntu0.24.04.2 \
   ca-certificates=20240203 \
