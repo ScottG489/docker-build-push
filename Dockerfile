@@ -1,4 +1,4 @@
-FROM ubuntu:24.04@sha256:33ceb71981b602c1a7443a53469e4dba065f7503eab3078a2d7a57a2ab987517
+FROM ubuntu:24.04@sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b
 
 # Ubuntu packages come from this point-in-time snapshot of the archive instead of
 # per-package version pins, which stop building as soon as Ubuntu supersedes a version.
