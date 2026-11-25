@@ -3,7 +3,7 @@ FROM ubuntu:24.04@sha256:33ceb71981b602c1a7443a53469e4dba065f7503eab3078a2d7a57a
 # Ubuntu packages come from this point-in-time snapshot of the archive instead of
 # per-package version pins, which stop building as soon as Ubuntu supersedes a version.
 # Renovate bumps it through the ubuntu-snapshot datasource in ScottG489/renovate-config.
-ARG UBUNTU_SNAPSHOT=20261120T050039Z
+ARG UBUNTU_SNAPSHOT=20261124T204132Z
 RUN echo "APT::Snapshot \"${UBUNTU_SNAPSHOT}\";" > /etc/apt/apt.conf.d/50snapshot
 
 # snapshot.ubuntu.com is HTTPS-only and the base image has no CA bundle yet, so the
